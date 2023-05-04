@@ -45,8 +45,8 @@ POST /user/auth/login
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| `email` | `string` | **required|email|unique**.|
-| `password` | `string` | **required|string|min:6|max:55|confirmed**.|
+| `email` | `string` | required, email, unique|
+| `password` | `string` | required, string, min:6, max:55, confirmed|
 
 
 ### Get Escape Room
@@ -57,13 +57,13 @@ GET /user/find/rooms
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| `name` | `string` | "sometimes|nullable|min:1|max:55"|
-| `theme` | `string` | `sometimes|nullable|min:1|max:55`|
-| `pax` | `string` | `sometimes|nullable|numeric|min:1|max:99`|
-| `checkin` | `string` | `sometimes|nullable|date|after_or_equal:today`|
-| `checkout` | `string` | `sometimes|nullbale|date|after:checkin`|
-| `offset` | `string` | `sometimes|nullable|min:1|max:100`|
-| `page` | `string` | `sometimes|nullable|min:1`|
+| `name` | `string` | sometimes, nullable, min:1, max:55 |
+| `theme` | `string` | sometimes, nullable, min:1, max:55 |
+| `pax` | `string` | sometimes, nullable, numeric, min:1, max:99 |
+| `checkin` | `string` | sometimes, nullable, date, after_or_equal:today |
+| `checkout` | `string` | sometimes, nullbale, date, after:checkin |
+| `offset` | `string` | sometimes, nullable, min:1, max:100 |
+| `page` | `string` | sometimes, nullable, min:1 |
 
 
 ### Get Escape Room
@@ -83,11 +83,11 @@ POST /user/booking/create
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| `room_id` | `string` | **required|exists:rooms,id**.|
-| `pax` | `string` | **sometimes|nullable|numeric|min:1|max:99**.|
-| `checkin` | `string` | **sometimes|nullable|date|after_or_equal:today**.|
-| `checkout` | `string` | **sometimes|nullbale|date|after:checkin**.|
-| `notes` | `string` | **sometimes|min:3|max:255**.|
+| `room_id` | `string` | required, exists:rooms,id .|
+| `pax` | `string` | sometimes, nullable, numeric, min:1, max:99|
+| `checkin` | `string` | sometimes, nullable, date, after_or_equal:today |
+| `checkout` | `string` | sometimes, nullbale, date, after:checkin |
+| `notes` | `string` | sometimes, min:3, max:255 |
 
 
 ### Show all Bookings
