@@ -1,5 +1,6 @@
-<h1>Verde API</h1> <br>
+## Verde API
 <span>by Wildan Maulana</span>
+This project is hosted in https://verde-api.wildan.xyz
 
 ## About Project
 
@@ -13,3 +14,6 @@ This project developed with Laravel 9, contain RESTful API for an escape room bo
 4. Run Laravel key generate <code>php artisan key:generate</code>
 5. Database migration <code>php artisan migrate</code>
 6. Run your Laravel <code>php artisan serve</code>
+
+## API Documentation
+You can see the detail of API in this link https://www.postman.com/wildan-maulana-playground/workspace/verde-api
