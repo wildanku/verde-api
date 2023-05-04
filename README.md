@@ -1,5 +1,5 @@
 ## Verde API
-<span>by Wildan Maulana</span>
+Source Code by Wildan Maulana <br>
 This project is hosted in https://verde-api.wildan.xyz
 
 ## About Project
