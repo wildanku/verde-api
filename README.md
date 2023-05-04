@@ -25,7 +25,7 @@ https://verde-api.wildan.xyz
 ### User Registration
 
 ```http
-GET /user/auth/registration
+POST /user/auth/registration
 ```
 
 | Parameter | Type | Description |
@@ -36,4 +36,85 @@ GET /user/auth/registration
 | `birth_date` | `string` | **required|date|before:now**.|
 | `password` | `string` | **required|string|min:6|max:55|confirmed**.|
 | `password_confirmation` | `string` | **required|string|min:6|max:55|confirmed**.|
+
+### User Authentication
+
+```http
+POST /user/auth/login
+```
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| `email` | `string` | **required|email|unique**.|
+| `password` | `string` | **required|string|min:6|max:55|confirmed**.|
+
+
+### Get Escape Room
+
+```http
+GET /user/find/rooms
+```
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| `name` | `string` | **sometimes|nullable|min:1|max:55**.|
+| `theme` | `string` | **sometimes|nullable|min:1|max:55**.|
+| `pax` | `string` | **sometimes|nullable|numeric|min:1|max:99**.|
+| `checkin` | `string` | **sometimes|nullable|date|after_or_equal:today**.|
+| `checkout` | `string` | **sometimes|nullbale|date|after:checkin**.|
+| `offset` | `string` | **sometimes|nullable|min:1|max:100**.|
+| `page` | `string` | **sometimes|nullable|min:1**.|
+
+
+### Get Escape Room
+
+```http
+GET /user/find/room/{room}
+```
+
+
+### Book Escape Room
+
+To book, you should provide your API key in the `Authorization` header.
+
+```http
+POST /user/booking/create
+```
+
+| Parameter | Type | Description |
+| :--- | :--- | :--- |
+| `room_id` | `string` | **required|exists:rooms,id**.|
+| `pax` | `string` | **sometimes|nullable|numeric|min:1|max:99**.|
+| `checkin` | `string` | **sometimes|nullable|date|after_or_equal:today**.|
+| `checkout` | `string` | **sometimes|nullbale|date|after:checkin**.|
+| `notes` | `string` | **sometimes|min:3|max:255**.|
+
+
+### Show all Bookings
+
+To see all bookings, you should provide your API key in the `Authorization` header.
+
+```http
+GET /user/booking/all
+```
+
+### Show Booking Detail
+
+To see detail of booking, you should provide your API key in the `Authorization` header.
+
+```http
+GET /user/booking/{booking}
+```
+
+
+### Cancel Booking
+
+To cancel booking, you should provide your API key in the `Authorization` header.
+
+```http
+GET /user/booking/{booking}/cancel
+```
+
+
+
 
