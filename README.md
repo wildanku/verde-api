@@ -57,13 +57,13 @@ GET /user/find/rooms
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| `name` | `string` | **sometimes|nullable|min:1|max:55**.|
-| `theme` | `string` | **sometimes|nullable|min:1|max:55**.|
-| `pax` | `string` | **sometimes|nullable|numeric|min:1|max:99**.|
-| `checkin` | `string` | **sometimes|nullable|date|after_or_equal:today**.|
-| `checkout` | `string` | **sometimes|nullbale|date|after:checkin**.|
-| `offset` | `string` | **sometimes|nullable|min:1|max:100**.|
-| `page` | `string` | **sometimes|nullable|min:1**.|
+| `name` | `string` | sometimes|nullable|min:1|max:55.|
+| `theme` | `string` | sometimes|nullable|min:1|max:55.|
+| `pax` | `string` | sometimes|nullable|numeric|min:1|max:99.|
+| `checkin` | `string` | sometimes|nullable|date|after_or_equal:today.|
+| `checkout` | `string` | sometimes|nullbale|date|after:checkin.|
+| `offset` | `string` | sometimes|nullable|min:1|max:100.|
+| `page` | `string` | sometimes|nullable|min:1.|
 
 
 ### Get Escape Room
