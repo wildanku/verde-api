@@ -46,8 +46,8 @@ POST /user/auth/login
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| `email` | `string` | required, email, unique|
-| `password` | `string` | required, string, min:6, max:55, confirmed|
+| `email` | `string` | required, email|
+| `password` | `string` | required, string, min:6, max:55|
 
 
 ### Get Escape Room
@@ -67,7 +67,7 @@ GET /user/find/rooms
 | `page` | `string` | sometimes, nullable, min:1 |
 
 
-### Get Escape Room
+### Get Detail Escape Room
 
 ```http
 GET /user/find/room/{room}
