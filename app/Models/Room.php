@@ -19,7 +19,7 @@ class Room extends Model
     public static function boot() {
         parent::boot();
         static::creating(function ($model) {
-            $model->added_by = auth('admins')->user()->id;
+            $model->added_by = auth('admins')?->user()?->id;
         });
     }
 

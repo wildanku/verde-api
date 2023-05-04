@@ -38,7 +38,6 @@ Class BookingService
             ];
         }
         
-        $bookingDates = [];
         $subTotal = 0;
         $discount = 0;
 
@@ -51,7 +50,6 @@ Class BookingService
         foreach ($period as $dt) {
             $dateyear = $dt->format('Y-m-d');
             $date = $dt->format('m-d');
-            array_push($bookingDates, $date);
 
             // checking date availability to each room
             if(!in_array($dateyear, $room->timeslots->pluck('date')->toArray())) {
@@ -64,12 +62,12 @@ Class BookingService
 
             $getPrice = RoomTimeSlot::where(['room_id' => $room->id, 'date' => $dateyear])->first()->price ?? $room->price;
             $subTotal += $getPrice;
-        }
 
-        // applying discount
-        $birthDate = Carbon::parse(auth('users')->user()->birth_date)->format('m-d');
-        if(in_array($birthDate, $bookingDates)){
-            $discount = $subTotal * 0.1;
+            // applying discount when user book on user's birthdate
+            $birthDate = Carbon::parse(auth('users')->user()->birth_date)->format('m-d');
+            if($birthDate == $date){
+                $discount = $getPrice * 0.1;
+            }
         }
 
         $booking = DB::transaction(function () use($room, $request, $discount, $subTotal) {
