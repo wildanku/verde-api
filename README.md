@@ -21,6 +21,7 @@ You can see the detail of API in this link https://www.postman.com/wildan-maulan
 
 ### Base URL (Development Server)
 https://verde-api.wildan.xyz
+**Dummy data is available in development server.**
 
 ### User Registration
 
