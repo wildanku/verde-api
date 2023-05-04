@@ -20,8 +20,8 @@ This project developed with Laravel 9, contain RESTful API for an escape room bo
 You can see the detail of API in this link https://www.postman.com/wildan-maulana-playground/workspace/verde-api
 
 ### Base URL (Development Server)
-https://verde-api.wildan.xyz
-**Dummy data is available in development server.**
+https://verde-api.wildan.xyz <br>
+(dummy data is available in development server)
 
 ### User Registration
 
