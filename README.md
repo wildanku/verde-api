@@ -30,12 +30,12 @@ POST /user/auth/registration
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| `name` | `string` | **required|string|min:3|max:100**.|
-| `email` | `string` | **required|email|unique**.|
-| `phone` | `string` | **required|min:6|max:20|unique**.|
-| `birth_date` | `string` | **required|date|before:now**.|
-| `password` | `string` | **required|string|min:6|max:55|confirmed**.|
-| `password_confirmation` | `string` | **required|string|min:6|max:55|confirmed**.|
+| `name` | `string` | required, string, min:3|max:100 |
+| `email` | `string` | required, email, unique |
+| `phone` | `string` | required, min:6, max:20, unique |
+| `birth_date` | `string` | required, date, before:now |
+| `password` | `string` | required, string, min:6, max:55, confirmed |
+| `password_confirmation` | `string` | required, string, min:6, max:55, confirmed |
 
 ### User Authentication
 
