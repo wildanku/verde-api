@@ -32,9 +32,9 @@ POST /user/auth/registration
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
 | `name` | `string` | required, string, min:3|max:100 |
-| `email` | `string` | required, email, unique |
+| `email` | `email` | required, email, unique |
 | `phone` | `string` | required, min:6, max:20, unique |
-| `birth_date` | `string` | required, date, before:now |
+| `birth_date` | `date` | required, date, before:now |
 | `password` | `string` | required, string, min:6, max:55, confirmed |
 | `password_confirmation` | `string` | required, string, min:6, max:55, confirmed |
 
@@ -46,7 +46,7 @@ POST /user/auth/login
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| `email` | `string` | required, email|
+| `email` | `email` | required, email|
 | `password` | `string` | required, string, min:6, max:55|
 
 
@@ -60,11 +60,11 @@ GET /user/find/rooms
 | :--- | :--- | :--- |
 | `name` | `string` | sometimes, nullable, min:1, max:55 |
 | `theme` | `string` | sometimes, nullable, min:1, max:55 |
-| `pax` | `string` | sometimes, nullable, numeric, min:1, max:99 |
-| `checkin` | `string` | sometimes, nullable, date, after_or_equal:today |
-| `checkout` | `string` | sometimes, nullbale, date, after:checkin |
-| `offset` | `string` | sometimes, nullable, min:1, max:100 |
-| `page` | `string` | sometimes, nullable, min:1 |
+| `pax` | `numeric` | sometimes, nullable, numeric, min:1, max:99 |
+| `checkin` | `date` | sometimes, nullable, date, after_or_equal:today |
+| `checkout` | `date` | sometimes, nullbale, date, after:checkin |
+| `offset` | `numeric` | sometimes, nullable, min:1, max:100 |
+| `page` | `numeric` | sometimes, nullable, min:1 |
 
 
 ### Get Detail Escape Room
@@ -84,10 +84,10 @@ POST /user/booking/create
 
 | Parameter | Type | Description |
 | :--- | :--- | :--- |
-| `room_id` | `string` | required, exists:rooms,id .|
-| `pax` | `string` | sometimes, nullable, numeric, min:1, max:99|
-| `checkin` | `string` | sometimes, nullable, date, after_or_equal:today |
-| `checkout` | `string` | sometimes, nullbale, date, after:checkin |
+| `room_id` | `numeric` | required, exists:rooms,id .|
+| `pax` | `numeric` | sometimes, nullable, numeric, min:1, max:99|
+| `checkin` | `date` | sometimes, nullable, date, after_or_equal:today |
+| `checkout` | `date` | sometimes, nullbale, date, after:checkin |
 | `notes` | `string` | sometimes, min:3, max:255 |
 
 
